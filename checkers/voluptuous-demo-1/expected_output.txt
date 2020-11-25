@@ -1,0 +1,66 @@
+
+
+
+[<class 'int'>, <class 'float'>, <class 'complex'>]
+[1, 2, 3]
+pass
+
+
+
+[<class 'int'>, <class 'float'>, <class 'complex'>]
+[1.1, 2.2, 3.3]
+pass
+
+
+
+[<class 'int'>, <class 'float'>, <class 'complex'>]
+[(1+2j), (3+4j), 5j]
+pass
+
+
+
+[<class 'int'>, <class 'float'>, <class 'complex'>]
+['1', '2', '3']
+expected complex @ data[0]
+
+
+
+[0, 1]
+[0, 0, 0]
+pass
+
+
+
+[0, 1]
+[1, 1, 0]
+pass
+
+
+
+[0, 1]
+[1, 2, 3]
+not a valid value @ data[1]
+
+
+
+<function pos at 0x7f421daff0d0>
+42
+pass
+
+
+
+<function pos at 0x7f421daff0d0>
+0
+positive integer value expected, but got 0 instead
+
+
+
+<function pos at 0x7f421daff0d0>
+-1
+positive integer value expected, but got -1 instead
+
+
+
+<function pos at 0x7f421daff0d0>
+1.5
+positive integer value expected, but got 1.5 instead
