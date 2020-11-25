@@ -1,0 +1,93 @@
+Create Virtualenv for Python deps ...
+Using base prefix '/usr'
+New python executable in /home/tester/temp/python-schema-checks/schemagic-demo-2/venv/bin/python3
+Not overwriting existing python script /home/tester/temp/python-schema-checks/schemagic-demo-2/venv/bin/python (you must use /home/tester/temp/python-schema-checks/schemagic-demo-2/venv/bin/python3)
+Installing setuptools, pip, wheel...done.
+Running virtualenv with interpreter /usr/bin/python3
+Requirement already satisfied: schemagic in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 1))
+
+
+
+[<class 'int'>]
+[1, 2, 3]
+[1, 2, 3]
+pass
+
+
+
+[<class 'int'>]
+['hello', 'world', '!']
+invalid literal for int() with base 10: 'hello'
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+ValueError: invalid literal for int() with base 10: 'hello'
+
+
+
+[<class 'int'>]
+['1', 1.5]
+[1, 1]
+pass
+
+
+
+[<class 'str'>]
+[1, 2, 3, 4]
+['1', '2', '3', '4']
+pass
+
+
+
+[<class 'str'>]
+['hello', 'world', '!']
+['hello', 'world', '!']
+pass
+
+
+
+[<class 'float'>]
+[1, 2, 3]
+[1.0, 2.0, 3.0]
+pass
+
+
+
+[<class 'float'>]
+['hello', 'world', '!']
+could not convert string to float: 'hello'
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-2/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+ValueError: could not convert string to float: 'hello'
+
+
+
+[<class 'float'>]
+['1', 1.5, '3.1415']
+[1.0, 1.5, 3.1415]
+pass
