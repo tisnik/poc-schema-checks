@@ -1,0 +1,177 @@
+Create Virtualenv for Python deps ...
+Using base prefix '/usr'
+New python executable in /home/tester/temp/python-schema-checks/schemagic-demo-3/venv/bin/python3
+Not overwriting existing python script /home/tester/temp/python-schema-checks/schemagic-demo-3/venv/bin/python (you must use /home/tester/temp/python-schema-checks/schemagic-demo-3/venv/bin/python3)
+Installing setuptools, pip, wheel...done.
+Running virtualenv with interpreter /usr/bin/python3
+Requirement already satisfied: schemagic in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 1))
+
+
+
+[<function is_int at 0x7f6888b95c80>]
+[1, 2, 3]
+[None, None, None]
+pass
+
+
+
+[<function is_int at 0x7f6888b95c80>]
+['hello', 'world', '!']
+
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+  File "schemagic_test.py", line 23, in is_int
+    is_type(value, int)
+  File "schemagic_test.py", line 19, in is_type
+    assert type(value) is expected_type
+AssertionError
+
+
+
+[<function is_int at 0x7f6888b95c80>]
+['1', 1.5]
+
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+  File "schemagic_test.py", line 23, in is_int
+    is_type(value, int)
+  File "schemagic_test.py", line 19, in is_type
+    assert type(value) is expected_type
+AssertionError
+
+
+
+[<function is_float at 0x7f6888b95d08>]
+[1, 2, 3]
+
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+  File "schemagic_test.py", line 27, in is_float
+    is_type(value, float)
+  File "schemagic_test.py", line 19, in is_type
+    assert type(value) is expected_type
+AssertionError
+
+
+
+[<function is_float at 0x7f6888b95d08>]
+['hello', 'world', '!']
+
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+  File "schemagic_test.py", line 27, in is_float
+    is_type(value, float)
+  File "schemagic_test.py", line 19, in is_type
+    assert type(value) is expected_type
+AssertionError
+
+
+
+[<function is_float at 0x7f6888b95d08>]
+['1', 1.5, '3.1415']
+
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+  File "schemagic_test.py", line 27, in is_float
+    is_type(value, float)
+  File "schemagic_test.py", line 19, in is_type
+    assert type(value) is expected_type
+AssertionError
+
+
+
+[<function <lambda> at 0x7f6888b95d90>]
+[1, 2, 3, 4]
+
+Traceback (most recent call last):
+  File "schemagic_test.py", line 11, in validate
+    print(validate_against_schema(schema, data))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 51, in validate_sequence_template
+    return list(map(validate_against_schema, itertools.repeat(schema[0], len(value)), value))
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 81, in <lambda>
+    validate_against_schema = lambda schema, value: _validate_against_schema(schema, value)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/utils.py", line 67, in _fn
+    return dispatch_fn(*args, **kwargs)
+  File "/home/tester/temp/python-schema-checks/schemagic-demo-3/venv/lib/python3.6/site-packages/schemagic/core.py", line 80, in <lambda>
+    default=lambda schema, value: schema(value))
+  File "schemagic_test.py", line 32, in <lambda>
+    string_list = [lambda x: is_type(x, str)]
+  File "schemagic_test.py", line 19, in is_type
+    assert type(value) is expected_type
+AssertionError
+
+
+
+[<function <lambda> at 0x7f6888b95d90>]
+['hello', 'world', '!']
+[None, None, None]
+pass
