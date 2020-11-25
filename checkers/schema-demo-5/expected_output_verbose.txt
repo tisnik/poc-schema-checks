@@ -1,0 +1,86 @@
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 15000.0, 'id': 1, 'position': 'QA', 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 15000, 'id': 1, 'position': 'QA', 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': -15000.0, 'id': 1, 'position': 'QA', 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'salary' error:
+Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>) did not validate -15000.0
+positive_float(-15000.0) should evaluate to True
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 1000000.0, 'id': 1, 'position': 'QA', 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'salary' error:
+<lambda>(1000000.0) should evaluate to True
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 15000.0, 'id': 1, 'position': 'QA', 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 100000000.0, 'position': 'QA', 'name': 'Eda', 'id': 1}
+Key 'salary' error:
+<lambda>(100000000.0) should evaluate to True
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 45000.0, 'id': 1, 'position': '', 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'position' error:
+<lambda>('') should evaluate to True
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 45000.0, 'id': 1, 'position': 'tovarnik', 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'position' error:
+<lambda>('tovarnik') should evaluate to True
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 25000.0, 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'position': 'DevOps', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'id': 1, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 45000.0, 'id': 1, 'position': 'HR', 'name': 'eda', 'surname': 'Wasserfall'}
+Key 'name' error:
+name_str('eda') should evaluate to True
+
+
+
+Schema({Optional('salary'): And(Or(<function positive_integer at 0x7f56f7e499d8>, <function positive_float at 0x7f56f7e57730>), <function <lambda> at 0x7f56f7e57840>), 'id': <function positive_integer at 0x7f56f7e499d8>, Optional('position'): And(<class 'str'>, <function <lambda> at 0x7f56f7e578c8>), 'name': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>), 'surname': And(<class 'str'>, <built-in function len>, <function name_str at 0x7f56f7e577b8>)})
+{'salary': 45000.0, 'id': 1, 'position': 'HR', 'name': 'Eda', 'surname': 'wasserfall'}
+Key 'surname' error:
+name_str('wasserfall') should evaluate to True

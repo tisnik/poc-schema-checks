@@ -1,0 +1,73 @@
+
+
+
+{'position': 'QA', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 15000.0}
+pass
+
+
+
+{'position': 'QA', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 15000}
+pass
+
+
+
+{'position': 'QA', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': -15000.0}
+Key 'salary' error:
+Or(<function positive_integer at 0x7f671c0779d8>, <function positive_float at 0x7f671c085730>) did not validate -15000.0
+positive_float(-15000.0) should evaluate to True
+
+
+
+{'position': 'QA', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 1000000.0}
+Key 'salary' error:
+<lambda>(1000000.0) should evaluate to True
+
+
+
+{'position': 'QA', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 15000.0}
+pass
+
+
+
+{'position': 'QA', 'id': 1, 'name': 'Eda', 'salary': 100000000.0}
+Key 'salary' error:
+<lambda>(100000000.0) should evaluate to True
+
+
+
+{'position': '', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 45000.0}
+Key 'position' error:
+<lambda>('') should evaluate to True
+
+
+
+{'position': 'tovarnik', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 45000.0}
+Key 'position' error:
+<lambda>('tovarnik') should evaluate to True
+
+
+
+{'id': 1, 'name': 'Eda', 'surname': 'Wasserfall', 'salary': 25000.0}
+pass
+
+
+
+{'position': 'DevOps', 'id': 1, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+{'id': 1, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+{'position': 'HR', 'id': 1, 'name': 'eda', 'surname': 'Wasserfall', 'salary': 45000.0}
+Key 'name' error:
+name_str('eda') should evaluate to True
+
+
+
+{'position': 'HR', 'id': 1, 'name': 'Eda', 'surname': 'wasserfall', 'salary': 45000.0}
+Key 'surname' error:
+name_str('wasserfall') should evaluate to True
