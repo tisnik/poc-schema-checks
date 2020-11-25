@@ -1,0 +1,105 @@
+
+
+
+Schema([<class 'int'>, <class 'float'>, <class 'complex'>])
+[1, 2, 3]
+pass
+
+
+
+Schema([<class 'int'>, <class 'float'>, <class 'complex'>])
+[1.1, 2.2, 3.3]
+pass
+
+
+
+Schema([<class 'int'>, <class 'float'>, <class 'complex'>])
+[(1+2j), (3+4j), 5j]
+pass
+
+
+
+Schema([<class 'int'>, <class 'float'>, <class 'complex'>])
+['1', '2', '3']
+Or(<class 'int'>, <class 'float'>, <class 'complex'>) did not validate '1'
+'1' should be instance of 'complex'
+
+
+
+Schema([0, 1])
+[0, 0, 0]
+pass
+
+
+
+Schema([0, 1])
+[1, 1, 0]
+pass
+
+
+
+Schema([0, 1])
+[1, 2, 3]
+Or(0, 1) did not validate 2
+1 does not match 2
+
+
+
+Schema(<function pos at 0x7f45c4172bf8>)
+42
+pass
+
+
+
+Schema(<function pos at 0x7f45c4172bf8>)
+0
+pos(0) should evaluate to True
+
+
+
+Schema(<function pos at 0x7f45c4172bf8>)
+-1
+pos(-1) should evaluate to True
+
+
+
+Schema(<function pos at 0x7f45c4172bf8>)
+1.5
+pos(1.5) should evaluate to True
+
+
+
+Schema(<function <lambda> at 0x7f45c40ff730>)
+42
+<lambda>(42) should evaluate to True
+
+
+
+Schema(<function <lambda> at 0x7f45c40ff730>)
+0
+<lambda>(0) should evaluate to True
+
+
+
+Schema(<function <lambda> at 0x7f45c40ff730>)
+-1
+pass
+
+
+
+Schema({'surname': <class 'str'>, 'id': <function pos at 0x7f45c4172bf8>, 'name': <class 'str'>})
+{'surname': 'Wasserfall', 'id': 1, 'name': 'Eda'}
+pass
+
+
+
+Schema({'surname': <class 'str'>, 'id': <function pos at 0x7f45c4172bf8>, 'name': <class 'str'>})
+{'id': 1, 'name': 'Eda'}
+Missing keys: 'surname'
+
+
+
+Schema({'surname': <class 'str'>, 'id': <function pos at 0x7f45c4172bf8>, 'name': <class 'str'>})
+{'surname': 'Wasserfall', 'id': 0, 'name': 'Eda'}
+Key 'id' error:
+pos(0) should evaluate to True
