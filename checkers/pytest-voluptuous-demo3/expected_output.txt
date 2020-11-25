@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.6.3, pytest-3.3.2, py-1.5.2, pluggy-0.6.0
+rootdir: /home/ptisnovs/temp/python/python-schema-checks/pytest-voluptuous-demo3, inifile:
+plugins: voluptuous-1.0.2, cov-2.5.1
+collected 3 items
+
+pytest-voluptuous-demo3.py .F.                                           [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_uuid_2 __________________________________
+
+    def test_uuid_2():
+>       assert {"uuid": "00ebf64b-xxxx-4b5d-846a-28971dc05796"} == uuid_response_struct
+E       AssertionError: assert failed to validation error(s):
+E         - uuid: not a valid value for dictionary value @ data['uuid']
+
+pytest-voluptuous-demo3.py:26: AssertionError
+====================== 1 failed, 2 passed in 0.63 seconds ======================
