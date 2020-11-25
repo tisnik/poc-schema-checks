@@ -1,0 +1,45 @@
+============================= test session starts ==============================
+platform linux -- Python 3.4.3, pytest-3.3.1, py-1.5.2, pluggy-0.6.0
+rootdir: /home/tester/temp/python/python-schema-checks/pytest-voluptuous-demo1, inifile:
+plugins: voluptuous-1.0.2
+collected 7 items
+
+pytest-voluptuous-demo1.py ..FFF.F                                       [100%]
+
+=================================== FAILURES ===================================
+____________________________________ test3 _____________________________________
+
+    def test3():
+>       assert [1, "2", 3] == number_list
+E       assert failed to validation error(s):
+E         - 1: expected complex @ data[1]
+
+pytest-voluptuous-demo1.py:21: AssertionError
+____________________________________ test4 _____________________________________
+
+    def test4():
+>       assert ["1", "2", "3"] == number_list
+E       assert failed to validation error(s):
+E         - 0: expected complex @ data[0]
+E         - 1: expected complex @ data[1]
+E         - 2: expected complex @ data[2]
+
+pytest-voluptuous-demo1.py:25: AssertionError
+____________________________________ test5 _____________________________________
+
+    def test5():
+>       assert (1, 2, 3) == number_list
+E       assert failed to validation error(s):
+E         - : expected a list
+
+pytest-voluptuous-demo1.py:29: AssertionError
+____________________________________ test7 _____________________________________
+
+    def test7():
+>       assert binary_numbers == [1, 2, 3]
+E       assert failed to validation error(s):
+E         - 1: not a valid value @ data[1]
+E         - 2: not a valid value @ data[2]
+
+pytest-voluptuous-demo1.py:40: AssertionError
+====================== 4 failed, 3 passed in 0.05 seconds ======================
