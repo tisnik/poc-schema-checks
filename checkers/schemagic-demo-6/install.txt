@@ -1,0 +1,11 @@
+Create Virtualenv for Python deps ...
+Running virtualenv with interpreter /usr/bin/python3
+Using base prefix '/usr'
+New python executable in /home/ptisnovs/temp/schemagic/schemagic1/venv/bin/python3
+Also creating executable in /home/ptisnovs/temp/schemagic/schemagic1/venv/bin/python
+Installing setuptools, pip, wheel...done.
+Collecting schemagic (from -r requirements.txt (line 1))
+  Downloading schemagic-0.9.1-py2.py3-none-any.whl
+Installing collected packages: schemagic
+Successfully installed schemagic-0.9.1
+

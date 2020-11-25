@@ -1,0 +1,38 @@
+Create Virtualenv for Python deps ...
+Using base prefix '/usr'
+New python executable in /home/tester/temp/python-schema-checks/schemagic-demo-6/venv/bin/python3
+Not overwriting existing python script /home/tester/temp/python-schema-checks/schemagic-demo-6/venv/bin/python (you must use /home/tester/temp/python-schema-checks/schemagic-demo-6/venv/bin/python3)
+Installing setuptools, pip, wheel...done.
+Running virtualenv with interpreter /usr/bin/python3
+Requirement already satisfied: schemagic in ./venv/lib/python3.6/site-packages (from -r requirements.txt (line 1))
+
+
+
+{'name': <function name_str at 0x7f9202b08c80>, 'surname': <function name_str at 0x7f9202b08c80>, 'id': <function pos_int at 0x7f9202b08d08>}
+{'name': 'Eda', 'surname': 'Wasserfall', 'id': 1}
+{'name': None, 'surname': None, 'id': None}
+pass
+
+
+
+{'name': <function name_str at 0x7f9202b08c80>, 'surname': <function name_str at 0x7f9202b08c80>, 'id': <function pos_int at 0x7f9202b08d08>}
+{'name': 'eda', 'surname': 'Wasserfall', 'id': 1}
+Proper name expected, but got 'eda' instead
+
+
+
+{'name': <function name_str at 0x7f9202b08c80>, 'surname': <function name_str at 0x7f9202b08c80>, 'id': <function pos_int at 0x7f9202b08d08>}
+{'name': 'E', 'surname': 'Wasserfall', 'id': 1}
+Proper name expected, but got 'E' instead
+
+
+
+{'name': <function name_str at 0x7f9202b08c80>, 'surname': <function name_str at 0x7f9202b08c80>, 'id': <function pos_int at 0x7f9202b08d08>}
+{'name': 'Eda', 'id': 1}
+Missing keys {'surname'} for value {'name': 'Eda', 'id': 1}
+
+
+
+{'name': <function name_str at 0x7f9202b08c80>, 'surname': <function name_str at 0x7f9202b08c80>, 'id': <function pos_int at 0x7f9202b08d08>}
+{'name': 'Eda', 'surname': 'Wasserfall', 'id': 0}
+Positive number expected, but got 0 instead
