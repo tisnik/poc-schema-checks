@@ -1,0 +1,50 @@
+
+
+
+{'position': 'QA', 'id': 1, 'salary': 15000.0, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+{'position': 'QA', 'id': 1, 'salary': 15000, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+{'position': 'QA', 'id': 1, 'salary': -15000.0, 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'salary' error:
+Or(<function positive_integer at 0x7fa41594fbf8>, <function positive_float at 0x7fa4158df730>, <function <lambda> at 0x7fa4158df7b8>) did not validate -15000.0
+<lambda>(-15000.0) should evaluate to True
+
+
+
+{'position': 'QA', 'id': 1, 'salary': 1000000.0, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+{'position': 'QA', 'id': 1, 'salary': 15000.0, 'name': 'Eda', 'surname': 'Wasserfall'}
+pass
+
+
+
+{'id': 1, 'salary': 100000000.0, 'name': 'Eda', 'position': 'QA'}
+Missing keys: 'surname'
+
+
+
+{'position': '', 'id': 1, 'salary': 45000.0, 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'position' error:
+<lambda>('') should evaluate to True
+
+
+
+{'position': 'tovarnik', 'id': 1, 'salary': 45000.0, 'name': 'Eda', 'surname': 'Wasserfall'}
+Key 'position' error:
+<lambda>('tovarnik') should evaluate to True
+
+
+
+{'position': '', 'id': 1, 'salary': 25000.0, 'name': '', 'surname': ''}
+Key 'position' error:
+<lambda>('') should evaluate to True
