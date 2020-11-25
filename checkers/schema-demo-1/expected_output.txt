@@ -1,0 +1,60 @@
+
+
+
+Schema([<class 'int'>])
+[1, 2, 3]
+pass
+
+
+
+Schema([<class 'int'>])
+[1.1, 2.2, 3.3]
+Or(<class 'int'>) did not validate 1.1
+1.1 should be instance of 'int'
+
+
+
+Schema([<class 'int'>])
+['1', '2', '3']
+Or(<class 'int'>) did not validate '1'
+'1' should be instance of 'int'
+
+
+
+Schema([<class 'float'>])
+[1, 2, 3]
+Or(<class 'float'>) did not validate 1
+1 should be instance of 'float'
+
+
+
+Schema([<class 'float'>])
+[1.1, 2.2, 3.3]
+pass
+
+
+
+Schema([<class 'float'>])
+['1', '2', '3']
+Or(<class 'float'>) did not validate '1'
+'1' should be instance of 'float'
+
+
+
+Schema([<class 'str'>])
+[1, 2, 3]
+Or(<class 'str'>) did not validate 1
+1 should be instance of 'str'
+
+
+
+Schema([<class 'str'>])
+[1.1, 2.2, 3.3]
+Or(<class 'str'>) did not validate 1.1
+1.1 should be instance of 'str'
+
+
+
+Schema([<class 'str'>])
+['1', '2', '3']
+pass
