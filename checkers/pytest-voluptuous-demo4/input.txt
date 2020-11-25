@@ -1,0 +1,23 @@
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Accept-Language": "en-US,en;q=0.5", 
+    "Cache-Control": "max-age=0", 
+    "Connection": "close", 
+    "Cookie": "_gauges_unique_day=1; _gauges_unique_month=1; _gauges_unique_year=1; _gauges_unique=1", 
+    "Host": "httpbin.org", 
+    "Referer": "https://httpbin.org/", 
+    "Upgrade-Insecure-Requests": "1", 
+    "User-Agent": "Mozilla/5.0 (X11; Fedora; Linux x86_64; rv:57.0) Gecko/20100101 Firefox/57.0"
+  }, 
+  "json": null, 
+  "method": "GET", 
+  "origin": "213.175.37.10", 
+  "url": "https://httpbin.org/anything"
+}
+

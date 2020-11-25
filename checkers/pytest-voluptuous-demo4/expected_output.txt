@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.4.3, pytest-3.3.1, py-1.5.2, pluggy-0.6.0 -- /usr/bin/python3
+cachedir: .cache
+rootdir: /home/tester/temp/pytest-voluptuous-demo4, inifile:
+plugins: voluptuous-1.0.2
+collecting ... collected 3 items
+
+pytest-voluptuous-demo2.py::test_the_anything_endpoint_1 PASSED          [ 33%]
+pytest-voluptuous-demo2.py::test_the_anything_endpoint_2 PASSED          [ 66%]
+pytest-voluptuous-demo2.py::test_the_anything_endpoint_3 PASSED          [100%]
+
+=========================== 3 passed in 1.94 seconds ===========================
