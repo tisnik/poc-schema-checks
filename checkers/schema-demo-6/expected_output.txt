@@ -1,0 +1,83 @@
+
+
+
+{'name': 'Eda', 'salary': 15000.0, 'id': 1, 'surname': 'Wasserfall', 'position': 'QA'}
+pass
+
+
+
+{'name': 'Eda', 'salary': 15000, 'id': 2, 'surname': 'Wasserfall', 'position': 'QA'}
+pass
+
+
+
+{'name': 'Eda', 'salary': -15000.0, 'id': 3, 'surname': 'Wasserfall', 'position': 'QA'}
+Key 'salary' error:
+Salary -15000.0 is too low
+
+
+
+{'name': 'Eda', 'salary': 1000000.0, 'id': 4, 'surname': 'Wasserfall', 'position': 'QA'}
+Key 'salary' error:
+Salary 1000000.0 is too high
+
+
+
+{'name': 'Eda', 'salary': 15000.0, 'id': 5, 'surname': 'Wasserfall', 'position': 'QA'}
+pass
+
+
+
+{'name': 'Eda', 'salary': 100000000.0, 'id': 6, 'position': 'QA'}
+Key 'salary' error:
+Salary 100000000.0 is too high
+
+
+
+{'name': 'Eda', 'salary': 45000.0, 'id': 7, 'surname': 'Wasserfall', 'position': ''}
+Key 'position' error:
+Unknown position ''
+
+
+
+{'name': 'Eda', 'salary': 45000.0, 'id': 8, 'surname': 'Wasserfall', 'position': 'tovarnik'}
+Key 'position' error:
+Unknown position 'tovarnik'
+
+
+
+{'name': 'Eda', 'salary': 25000.0, 'id': 9, 'surname': 'Wasserfall'}
+pass
+
+
+
+{'name': 'Eda', 'id': 10, 'surname': 'Wasserfall', 'position': 'DevOps'}
+pass
+
+
+
+{'name': 'Eda', 'id': 11, 'surname': 'Wasserfall'}
+pass
+
+
+
+{'id': 12}
+Missing keys: 'name', 'surname'
+
+
+
+{'name': 'eda', 'salary': 45000.0, 'id': 13, 'surname': 'Wasserfall', 'position': 'HR'}
+Key 'name' error:
+Regex('[A-Z][a-z]+') does not match 'eda'
+
+
+
+{'name': 'Eda', 'salary': 45000.0, 'id': 14, 'surname': 'wasserfall', 'position': 'HR'}
+Key 'surname' error:
+Regex('[A-Z][a-z]+') does not match 'wasserfall'
+
+
+
+{'name': 'Eda', 'salary': 45000.0, 'id': 1, 'surname': 'Unique', 'position': 'HR'}
+Key 'id' error:
+ID 1 is not unique

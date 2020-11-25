@@ -1,0 +1,98 @@
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 15000.0, 'position': 'QA', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 15000, 'position': 'QA', 'name': 'Eda', 'id': 2, 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': -15000.0, 'position': 'QA', 'name': 'Eda', 'id': 3, 'surname': 'Wasserfall'}
+Key 'salary' error:
+Salary -15000.0 is too low
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 1000000.0, 'position': 'QA', 'name': 'Eda', 'id': 4, 'surname': 'Wasserfall'}
+Key 'salary' error:
+Salary 1000000.0 is too high
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 15000.0, 'position': 'QA', 'name': 'Eda', 'id': 5, 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 100000000.0, 'position': 'QA', 'name': 'Eda', 'id': 6}
+Key 'salary' error:
+Salary 100000000.0 is too high
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 45000.0, 'position': '', 'name': 'Eda', 'id': 7, 'surname': 'Wasserfall'}
+Key 'position' error:
+Unknown position ''
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 45000.0, 'position': 'tovarnik', 'name': 'Eda', 'id': 8, 'surname': 'Wasserfall'}
+Key 'position' error:
+Unknown position 'tovarnik'
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 25000.0, 'name': 'Eda', 'id': 9, 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'position': 'DevOps', 'name': 'Eda', 'id': 10, 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'name': 'Eda', 'id': 11, 'surname': 'Wasserfall'}
+pass
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'id': 12}
+Missing keys: 'name', 'surname'
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 45000.0, 'position': 'HR', 'name': 'eda', 'id': 13, 'surname': 'Wasserfall'}
+Key 'name' error:
+Regex('[A-Z][a-z]+') does not match 'eda'
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 45000.0, 'position': 'HR', 'name': 'Eda', 'id': 14, 'surname': 'wasserfall'}
+Key 'surname' error:
+Regex('[A-Z][a-z]+') does not match 'wasserfall'
+
+
+
+Schema({Optional('salary'): <__main__.Salary object at 0x7ff019edada0>, Optional('position'): And(<class 'str'>, <__main__.Position object at 0x7ff019edae10>), 'name': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+')), 'id': <__main__.UniqueId object at 0x7ff019ed1908>, 'surname': And(<class 'str'>, <built-in function len>, Regex('[A-Z][a-z]+'))})
+{'salary': 45000.0, 'position': 'HR', 'name': 'Eda', 'id': 1, 'surname': 'Unique'}
+Key 'id' error:
+ID 1 is not unique
