@@ -1,0 +1,38 @@
+Create Virtualenv for Python deps ...
+Using base prefix '/usr'
+New python executable in venv/bin/python3
+Not overwriting existing python script venv/bin/python (you must use venv/bin/python3)
+Installing setuptools, pip...done.
+Running virtualenv with interpreter /usr/bin/python3
+Requirement already satisfied (use --upgrade to upgrade): schemagic in ./venv/lib/python3.4/site-packages (from -r requirements.txt (line 1))
+Cleaning up...
+
+
+
+{<class 'str'>: <function is_int at 0x7f7fa9bccbf8>}
+{'druha': 2, 'treti': 3, 'prvni': 1}
+pass
+
+
+
+{<class 'str'>: <function is_int at 0x7f7fa9bccbf8>}
+{'druha': '2', 'treti': 3, 'prvni': 1.5}
+Expected type: <class 'int'>, but the value has type <class 'str'>
+
+
+
+{<class 'str'>: <function is_int at 0x7f7fa9bccbf8>}
+{'druha': 'y', 'treti': 'z', 'prvni': 'x'}
+Expected type: <class 'int'>, but the value has type <class 'str'>
+
+
+
+{<class 'str'>: <function is_int at 0x7f7fa9bccbf8>}
+{1: 'x', 2: 'y', 3: 'z'}
+Expected type: <class 'int'>, but the value has type <class 'str'>
+
+
+
+{<class 'str'>: <function is_int at 0x7f7fa9bccbf8>}
+{1: 1, 2: 2, 3: 3}
+pass
