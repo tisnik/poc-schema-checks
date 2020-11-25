@@ -1,0 +1,60 @@
+Create Virtualenv for Python deps ...
+Using base prefix '/usr'
+New python executable in /home/tester/temp/python-schema-checks/schemagic-demo-4/venv/bin/python3
+Also creating executable in /home/tester/temp/python-schema-checks/schemagic-demo-4/venv/bin/python
+Installing setuptools, pip, wheel...done.
+Running virtualenv with interpreter /usr/bin/python3
+Collecting schemagic (from -r requirements.txt (line 1))
+  Using cached schemagic-0.9.1-py2.py3-none-any.whl
+Installing collected packages: schemagic
+Successfully installed schemagic-0.9.1
+
+
+
+[<function is_int at 0x7fb9dbfebd08>]
+[1, 2, 3]
+[None, None, None]
+pass
+
+
+
+[<function is_int at 0x7fb9dbfebd08>]
+['hello', 'world', '!']
+Expected type: <class 'int'>, but the value has type <class 'str'>
+
+
+
+[<function is_int at 0x7fb9dbfebd08>]
+['1', 1.5]
+Expected type: <class 'int'>, but the value has type <class 'str'>
+
+
+
+[<function is_float at 0x7fb9dbfebd90>]
+[1, 2, 3]
+Expected type: <class 'float'>, but the value has type <class 'int'>
+
+
+
+[<function is_float at 0x7fb9dbfebd90>]
+['hello', 'world', '!']
+Expected type: <class 'float'>, but the value has type <class 'str'>
+
+
+
+[<function is_float at 0x7fb9dbfebd90>]
+['1', 1.5, '3.1415']
+Expected type: <class 'float'>, but the value has type <class 'str'>
+
+
+
+[<function <lambda> at 0x7fb9dbfebe18>]
+[1, 2, 3, 4]
+Expected type: <class 'str'>, but the value has type <class 'int'>
+
+
+
+[<function <lambda> at 0x7fb9dbfebe18>]
+['hello', 'world', '!']
+[None, None, None]
+pass
