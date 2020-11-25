@@ -1,0 +1,57 @@
+============================= test session starts ==============================
+platform linux -- Python 3.4.3, pytest-3.3.1, py-1.5.2, pluggy-0.6.0
+rootdir: /home/tester/temp/python/python-schema-checks/pytest-voluptuous-demo5, inifile:
+plugins: voluptuous-1.0.2
+collected 14 items
+
+pytest-voluptuous-demo5.py .FFF.FF.......                                [100%]
+
+=================================== FAILURES ===================================
+____________________________________ test2 _____________________________________
+
+    def test2():
+>       assert user == {"name": "Eda",
+                        "id": 1}
+E       AssertionError: assert failed to validation error(s):
+E         - surname: required key not provided @ data['surname']
+
+pytest-voluptuous-demo5.py:26: AssertionError
+____________________________________ test3 _____________________________________
+
+    def test3():
+>       assert user == {"name": "Eda",
+                        "surname": "Wasserfall",
+                        "id": 0}
+E       AssertionError: assert failed to validation error(s):
+E         - id: positive integer value expected, but got 0 instead for dictionary value @ data['id']
+
+pytest-voluptuous-demo5.py:31: AssertionError
+____________________________________ test4 _____________________________________
+
+    def test4():
+>       assert user == {"name": "Eda",
+                        "surname": "Wasserfall"}
+E       AssertionError: assert failed to validation error(s):
+E         - id: required key not provided @ data['id']
+
+pytest-voluptuous-demo5.py:37: AssertionError
+____________________________________ test6 _____________________________________
+
+    def test6():
+>       assert user2 == {"name": "Eda",
+                         "id": 1}
+E       AssertionError: assert failed to validation error(s):
+E         - surname: required key not provided @ data['surname']
+
+pytest-voluptuous-demo5.py:53: AssertionError
+____________________________________ test7 _____________________________________
+
+    def test7():
+>       assert user2 == {"name": "Eda",
+                        "surname": "Wasserfall",
+                        "id": 0}
+E       AssertionError: assert failed to validation error(s):
+E         - id: positive integer value expected, but got 0 instead for dictionary value @ data['id']
+
+pytest-voluptuous-demo5.py:58: AssertionError
+====================== 5 failed, 9 passed in 0.07 seconds ======================
