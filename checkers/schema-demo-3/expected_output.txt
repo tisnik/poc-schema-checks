@@ -1,0 +1,49 @@
+
+
+
+{'salary': 15000.0, 'position': 'QA', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+pass
+
+
+
+{'salary': 15000, 'position': 'QA', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+Key 'salary' error:
+salary(15000) should evaluate to True
+
+
+
+{'salary': -15000.0, 'position': 'QA', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+Key 'salary' error:
+salary(-15000.0) should evaluate to True
+
+
+
+{'salary': 1000000.0, 'position': 'QA', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+Key 'salary' error:
+salary(1000000.0) should evaluate to True
+
+
+
+{'salary': 15000.0, 'position': 'QA', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+pass
+
+
+
+{'salary': 100000000.0, 'position': 'QA', 'name': 'Eda', 'id': 1}
+Key 'salary' error:
+salary(100000000.0) should evaluate to True
+
+
+
+{'salary': 45000.0, 'position': '', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+pass
+
+
+
+{'salary': 45000.0, 'position': 'tovarnik', 'name': 'Eda', 'id': 1, 'surname': 'Wasserfall'}
+pass
+
+
+
+{'salary': 25000.0, 'position': '', 'name': '', 'id': 1, 'surname': ''}
+pass

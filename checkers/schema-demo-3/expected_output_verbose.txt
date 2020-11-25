@@ -1,0 +1,58 @@
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': 'QA', 'salary': 15000.0, 'name': 'Eda'}
+pass
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': 'QA', 'salary': 15000, 'name': 'Eda'}
+Key 'salary' error:
+salary(15000) should evaluate to True
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': 'QA', 'salary': -15000.0, 'name': 'Eda'}
+Key 'salary' error:
+salary(-15000.0) should evaluate to True
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': 'QA', 'salary': 1000000.0, 'name': 'Eda'}
+Key 'salary' error:
+salary(1000000.0) should evaluate to True
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': 'QA', 'salary': 15000.0, 'name': 'Eda'}
+pass
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'position': 'QA', 'salary': 100000000.0, 'name': 'Eda'}
+Key 'salary' error:
+salary(100000000.0) should evaluate to True
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': '', 'salary': 45000.0, 'name': 'Eda'}
+pass
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': 'Wasserfall', 'position': 'tovarnik', 'salary': 45000.0, 'name': 'Eda'}
+pass
+
+
+
+Schema({'id': <function positive_integer at 0x7ffb0e54cc80>, 'surname': <class 'str'>, 'position': <class 'str'>, 'salary': <function salary at 0x7ffb0e4da7b8>, 'name': <class 'str'>})
+{'id': 1, 'surname': '', 'position': '', 'salary': 25000.0, 'name': ''}
+pass
