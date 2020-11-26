@@ -30,13 +30,20 @@ A proof of concept of schema checker for Insights Platform.
 
 ## Why schema check?
 
-### Possible security problems
+### Possible security problems in both pipelines
 
 1. Consuming messages from Kafka
 1. Consuming messages from SQS
 1. Consuming raw data from any cluster
 
 ### Some problems with standard Pandas behaviour
+
+Pandas library can be used to process data in a form of data frames. But there are some shortcomings:
+
+1. missing values handling
+1. custom date/time format handling
+1. non-standard data formats problems
+1. comma vs. dot in FP numeric values
 
 #### Missing values handling
 
@@ -78,7 +85,7 @@ Time to read    int64
 dtype: object
 ```
 
-But:
+But if any value is missing in input data:
 
 ```
 Block size,Time to read
@@ -94,7 +101,7 @@ Block size,Time to read
 10,177141401
 ```
 
-Is imported as:
+That table is imported as:
 
 ```
 Data frame
@@ -207,8 +214,238 @@ The last column type is incorrect.
 
 ## Possible solutions
 
+* Use schema check whenever possible
+* Golgen design: `clojure.spec`
+* But we need to work in Python instead
+* Ideally one solution for all checks
+
+### Places for schema checks
+
+1. Incomming messages in `platform.upload.buckit` topic in ext. data pipeline
+1. Raw data stored in AWS S3 bucket
+1. Messages in `ccx.ocp.results` topic in ext. data pipeline
+1. Data consumed by Parquet service in int. data pipeline
+
 ### Common schema check libraries
+
+1. Schemagic
+1. Schema
+1. Voluptuous
 
 ### Schema check libraries based on Pandas
 
-## Proposal
+1. Opulent Pandas
+1. Pandas Schema
+
+### Examples
+
+#### Pandas data frame schema checks based on Opulent Pandas
+
+Simple type validations
+
+```Python
+def validate_data_frame(data_frame):
+    schema = Schema({
+        Required('Block size'): [TypeValidator(int)],
+        Required('Time to read'): [TypeValidator(int)],
+        })
+
+    schema.validate(data_frame)
+
+
+df = pandas.read_csv("integer_values.csv")
+print_data_frame(df)
+validate_data_frame(df)
+```
+
+Custom validator implementation and usage
+
+```Python
+class PosintValidator(BaseValidator):
+    def validate(self, values):
+        if not (values > 0).all():
+            raise Error("positive integer value expected")
+
+
+def validate_data_frame(data_frame):
+
+    schema = Schema({
+        Required('Block size'): [PosintValidator()],
+        Required('Time to read'): [PosintValidator()],
+        })
+
+    schema.validate(data_frame)
+
+
+df = pandas.read_csv("integer_values.csv")
+print_data_frame(df)
+validate_data_frame(df)
+```
+
+Impossible to use `Any`!!!
+
+```Python
+class PosintValidator(BaseValidator):
+    def validate(self, values):
+        if not (values > 0).all():
+            raise Error("positive integer value expected")
+
+
+class IntOrNAValidator(BaseValidator):
+    def validate(self, values):
+        for value in values:
+            if (type(value) == np.int64):
+                return
+            if not (pandas.isna(value)):
+                raise Error("Int value or NA expected")
+
+
+def validate_data_frame(data_frame):
+
+    schema = Schema({
+        Required('Block size'): [PosintValidator()],
+        Required('Time to read'): [IntOrNAValidator()],
+        })
+
+    schema.validate(data_frame)
+
+
+df = pandas.read_csv("missing_integer_values.csv", dtype={"Time to read": "Int64"})
+print_data_frame(df)
+validate_data_frame(df)
+```
+
+#### Pandas data frame schema checks based on Voluptuous
+
+Very simple example based on checking tuples
+
+```Python
+def validate_data_frame(data_frame):
+    print()
+
+    print("Validation")
+    print("---------------------------")
+
+    schema = Schema((int, int, float))
+
+    for record in df.itertuples():
+        validate_item(schema, record)
+
+
+df = pandas.read_csv("missing_integer_values.csv")
+print_data_frame(df)
+validate_data_frame(df)
+```
+
+Real example based on custom schema
+
+```Python
+def validate_item(schema, data):
+    try:
+        print("\n")
+        # print(schema)
+        print(data)
+        schema(data._asdict())
+        print("pass")
+    except Exception as e:
+        print(e)
+
+
+def posint(value):
+    if type(value) is not int or value <= 0:
+        raise Invalid("positive integer value expected, but got {v} instead".format(v=value))
+
+
+def posfloat(value):
+    if type(value) is not float or value <= 0:
+        raise Invalid("positive float value expected, but got {v} instead".format(v=value))
+
+
+def validate_data_frame(data_frame):
+    print()
+
+    print("Validation")
+    print("---------------------------")
+
+    schema = Schema({
+        "Index": int,
+        "_1": posint,
+        "_2": posint,
+        "Change": Any(str, float),
+        "Language": str,
+        "Ratings": posfloat,
+        "Changep": float,
+        })
+
+    for record in df.itertuples():
+        validate_item(schema, record)
+
+
+df = pandas.read_csv("tiobe.tsv", sep="\t")
+print_data_frame(df)
+validate_data_frame(df)
+```
+
+#### Custom schema validation using Voluptuous libary
+
+```Python
+user = Schema({"name": str,
+               "surname": str,
+               "id": pos})
+
+validate(user, {"name": "Eda",
+                "surname": "Wasserfall",
+                "id": 1})
+
+validate(user, {"name": "Eda",
+                "id": 1})
+
+validate(user, {"name": "Eda",
+                "surname": "Wasserfall",
+                "id": 0})
+```
+
+Real schema
+
+```
+SCHEMA = S({"name": "metadata",
+            "version": Any("3-1-0", "3-2-0", "3-3-0")})
+
+SUMMARY = S(list)
+
+CODE_REPOSITORY = S({"type": str,
+                     "url": Url()})
+
+DETAIL = S({Optional("code_repository"): CODE_REPOSITORY,
+            Optional("declared_license"): str,
+            Optional("declared_licenses"): [str],
+            Optional("dependencies"): [str],
+            Optional("description"): Any(None, str),
+            Optional("devel_dependencies"): [str],
+            Optional("ecosystem"): str,
+            Optional("homepage"): Url(),
+            Optional("name"): str,
+            Optional("version"): str})
+
+
+DETAILS = S([DETAIL])
+
+COMPONENT_METADATA_SCHEMA = S({"_audit": Any(None, AUDIT),
+                               Optional("_release"): str,
+                               "schema": SCHEMA,
+                               "status": STATUS,
+                               "summary": SUMMARY,
+"details": DETAILS})
+```
+
+## Final proposal
+
+1. Create Git repository in Insights group with all schemas
+1. Use Voluptuous library as it is the most stable & versatile solution right now
+1. Use schema versioning
+1. Probably worth to add schema version into data as well (where applicable!)
+
+## Possible problems
+
+1. Missing versioning + problems with updates
+1. Schema check might be kinda slow, but it is scalable thing
