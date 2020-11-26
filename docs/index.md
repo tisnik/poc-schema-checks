@@ -13,7 +13,7 @@ A proof of concept of schema checker for Insights Platform.
 
 ## Notes
 
-1. Python libraries can be used since all consumers of this schema are written in python.
+1. Python libraries can be used since all consumers of this schema are written in Python.
 1. The schemas should support columns type validation as well.
 1. Cooperation with the processing team required.
 1. Consider future use case with Amazon RDS.
@@ -43,7 +43,7 @@ Pandas library can be used to process data in a form of data frames. But there a
 1. missing values handling
 1. custom date/time format handling
 1. non-standard data formats problems
-1. comma vs. dot in FP numeric values
+1. comma vs. dot seperator in FP numeric values
 
 #### Missing values handling
 
@@ -225,6 +225,7 @@ The last column type is incorrect.
 1. Raw data stored in AWS S3 bucket
 1. Messages in `ccx.ocp.results` topic in ext. data pipeline
 1. Data consumed by Parquet service in int. data pipeline
+1. Messages consumed from SQS in int. data pipeline
 
 ### Common schema check libraries
 
@@ -243,7 +244,7 @@ The last column type is incorrect.
 
 Simple type validations
 
-```Python
+```python
 def validate_data_frame(data_frame):
     schema = Schema({
         Required('Block size'): [TypeValidator(int)],
@@ -260,7 +261,7 @@ validate_data_frame(df)
 
 Custom validator implementation and usage
 
-```Python
+```python
 class PosintValidator(BaseValidator):
     def validate(self, values):
         if not (values > 0).all():
@@ -284,7 +285,7 @@ validate_data_frame(df)
 
 Impossible to use `Any`!!!
 
-```Python
+```python
 class PosintValidator(BaseValidator):
     def validate(self, values):
         if not (values > 0).all():
@@ -319,7 +320,7 @@ validate_data_frame(df)
 
 Very simple example based on checking tuples
 
-```Python
+```python
 def validate_data_frame(data_frame):
     print()
 
@@ -339,7 +340,7 @@ validate_data_frame(df)
 
 Real example based on custom schema
 
-```Python
+```python
 def validate_item(schema, data):
     try:
         print("\n")
@@ -388,7 +389,7 @@ validate_data_frame(df)
 
 #### Custom schema validation using Voluptuous libary
 
-```Python
+```python
 user = Schema({"name": str,
                "surname": str,
                "id": pos})
@@ -449,3 +450,5 @@ COMPONENT_METADATA_SCHEMA = S({"_audit": Any(None, AUDIT),
 
 1. Missing versioning + problems with updates
 1. Schema check might be kinda slow, but it is scalable thing
+
+## Action items
