@@ -408,7 +408,7 @@ validate(user, {"name": "Eda",
 
 Real schema
 
-```
+```python
 SCHEMA = S({"name": "metadata",
             "version": Any("3-1-0", "3-2-0", "3-3-0")})
 
@@ -452,3 +452,9 @@ COMPONENT_METADATA_SCHEMA = S({"_audit": Any(None, AUDIT),
 1. Schema check might be kinda slow, but it is scalable thing
 
 ## Action items
+
+1. Task to create Git repository with schemas
+1. Task to create schema for incomming messages in `platform.upload.buckit`
+1. Task to create schema for incomming messages in `ccx.ocp.results`
+1. Task to create schema for incomming messages in SQS
+1. Task to create schema for data to be consumed by Parquet service
