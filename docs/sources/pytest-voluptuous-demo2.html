@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>pytest-voluptuous-demo2.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>pytest-voluptuous-demo2.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>(C) Copyright 2018  Pavel Tisnovsky</p>
+<p>All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html</p>
+<p>Contributors:
+     Pavel Tisnovsky</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">pytest_voluptuous</span> <span class="kn">import</span> <span class="n">S</span><span class="p">,</span> <span class="n">Partial</span><span class="p">,</span> <span class="n">Exact</span>
+<span class="kn">from</span> <span class="nn">voluptuous</span> <span class="kn">import</span> <span class="n">Invalid</span>
+<span class="kn">from</span> <span class="nn">voluptuous.validators</span> <span class="kn">import</span> <span class="n">All</span><span class="p">,</span> <span class="n">Length</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Invalid</span><span class="p">(</span><span class="s2">&quot;positive integer value expected, but got {v} instead&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="n">value</span><span class="p">))</span>
+
+
+<span class="n">user</span> <span class="o">=</span> <span class="n">S</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+          <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">pos</span><span class="p">})</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">user</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eda&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Wasserfall&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test2</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">user</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eda&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test3</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">user</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eda&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Wasserfall&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+
+
+<span class="n">users</span> <span class="o">=</span> <span class="n">S</span><span class="p">([</span><span class="n">S</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+             <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+             <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">pos</span><span class="p">})])</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test4</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">users</span> <span class="o">==</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eda&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Wasserfall&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+                     <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Varel&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Frištenský&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}]</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">test5</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">users</span> <span class="o">==</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eda&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Wasserfall&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+                     <span class="p">{</span><span class="s2">&quot;surname&quot;</span><span class="p">:</span> <span class="s2">&quot;Frištenský&quot;</span><span class="p">,</span>
+                      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}]</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
