@@ -444,6 +444,7 @@ COMPONENT_METADATA_SCHEMA = S({"_audit": Any(None, AUDIT),
 1. Create Git repository in Insights group with all schemas
 1. Use Voluptuous library as it is the most stable & versatile solution right now
 1. Use schema versioning
+1. All structured data can be validated, including rule content
 1. Probably worth to add schema version into data as well (where applicable!)
 
 ## Possible problems
@@ -453,8 +454,11 @@ COMPONENT_METADATA_SCHEMA = S({"_audit": Any(None, AUDIT),
 
 ## Action items
 
+1. Epic for tracking all schema checks that needs to be implemented
 1. Task to create Git repository with schemas
 1. Task to create schema for incomming messages in `platform.upload.buckit`
 1. Task to create schema for incomming messages in `ccx.ocp.results`
+1. Task to create schemas for rule content (YAML files etc.)
 1. Task to create schema for incomming messages in SQS
 1. Task to create schema for data to be consumed by Parquet service
+1. Spikes to investigate possibility to version messages, content etc.
