@@ -316,6 +316,14 @@ print_data_frame(df)
 validate_data_frame(df)
 ```
 
+#### Voluptuous
+
+* Validators are simple callables
+* Errors are simple exceptions
+* Schemas are basic Python data structures
+* Designed from the ground up for validating more than just forms
+* Consistency
+
 #### Pandas data frame schema checks based on Voluptuous
 
 Very simple example based on checking tuples
@@ -454,8 +462,14 @@ COMPONENT_METADATA_SCHEMA = S({"_audit": Any(None, AUDIT),
 
 ## Action items
 
+1. Demo
 1. Epic for tracking all schema checks that needs to be implemented
 1. Task to create Git repository with schemas
+1. Task to write description about incomming messages in `platform.upload.buckit`
+1. Task to write description about incomming messages in `ccx.ocp.results`
+1. Task to write description about rule content (YAML files etc.)
+1. Task to write description about incomming messages in SQS
+1. Task to create schema for data to be consumed by Parquet service
 1. Task to create schema for incomming messages in `platform.upload.buckit`
 1. Task to create schema for incomming messages in `ccx.ocp.results`
 1. Task to create schemas for rule content (YAML files etc.)
